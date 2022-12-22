@@ -1,0 +1,193 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    font-family: 'Raleway' , sans-serif;
+}
+
+.container{
+    width: 100%;
+    height: 100vh;
+    background-color: hsl(229, 57%, 11%);
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.content{
+    padding: 20px;
+    background-color: hsl(228, 56%, 26%);
+    vertical-align: bottom;
+    display: inline-block;
+    box-shadow: 0px 5px 30px 0px rgba(0, 0, 0, 0.45);
+}
+
+#background{
+    background-image: url("bg-desktop.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 50vh;
+    position: absolute;
+    top: 50vh;
+}
+
+#leftContent{
+    z-index: 1000;
+    padding: 20px;
+    margin-right: 20px;
+    padding-right: 100px;
+    border-radius: 10px 75px 10px 10px;
+}
+
+#rightContent{
+    z-index: 1001;
+    color: #fff;
+    border-radius: 10px;
+    position: relative;
+}
+
+.actionButton{
+    background-color: hsl(229, 57%, 11%);
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 5px;
+    vertical-align: top;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    display: inline-block;
+    margin: 5px;
+    cursor: pointer;
+    margin-bottom: 0;
+}
+
+
+#actions{
+    margin-top: 20px;
+}
+
+#usage{
+    font-size: 12px;
+    color: #dadada;
+}
+
+#currentUsage{
+    font-weight: 700;
+    color: #fff;
+}
+
+#usageBar{
+    background-color: hsl(229, 54%, 18%);
+    width: 450px;
+    height: 14px;
+    border-radius: 1000px;
+    border: 3px solid hsl(229, 54%, 18%);
+    position: relative;
+}
+
+.usageLimit{
+    font-size: 10px;
+    font-weight: 700;
+}
+
+#usageMaxLimit{
+    position: absolute;
+    bottom: 20px;
+    right: 30px ;
+}
+
+#usageFill{
+    width: 81.5%;
+    height: 100%;
+    border-radius: 1000px;
+    background: linear-gradient( 90deg , hsl(6, 100%, 80%) , hsl(335, 100%, 65%));
+}
+
+#usageBall{
+    width: 10px;
+    height: 10px;
+    background-color: #fff;
+    position: absolute;
+    border-radius: 1000px;
+    top: 2px;
+    right: calc(18.5% + 2px);
+}
+
+#usageLeft{
+    position: absolute;
+    right: 20px;
+    top: -40px;
+    background-color: #fff;
+    color: black;
+    padding: 15px;
+    border-radius: 10px 10px 0px 10px;
+    font-size: 12px;
+    margin: 0;
+}
+
+#mainContent{
+    z-index: 1000;
+}
+
+#usageLeft::before{
+    content: "";
+    background-color: white;
+    height: 20px;
+    width: 20px;
+    position: absolute;
+    right: 0;
+    bottom: -20px;
+    clip-path: polygon(100% 0, 0 0, 100% 100%);
+}
+
+#usageRemaining{
+    font-size: 23px;
+    font-weight: 700;
+}
+
+@media(max-width: 890px){
+    #mainContent{
+        width: calc(100% - 40px);
+    }
+    .content{
+        display: block;
+        margin: auto;
+    }
+    #leftContent{
+        margin-bottom: 20px;
+        margin-right: 0;
+    }
+    #usage{
+        text-align: center;
+    }
+    
+    #usageBar{
+        width: 100%;
+    }
+
+    #logo{
+        height: 35px;
+    }
+    #usageLeft{
+        border-radius: 10px;
+        top: unset;
+        right: unset;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    #usageLeft::before{
+        display: none;
+    }
+    #usageMaxLimit{
+        border-radius: 10px;
+        right: unset;
+        top: unset;
+        left: 50%;
+
+    }
+}
